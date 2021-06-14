@@ -10,10 +10,11 @@ const CustomField = ({name,label,required}) => {
    		<>
          <Controller
             control={control}
+            defaultValue =""
             name={name}
             render = {({ field})=> (
             <TextField
-      		fullWidth
+      		  fullWidth
              label={label}
              required
              />
