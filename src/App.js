@@ -47,7 +47,7 @@ const App = () => {
 		const newCart = await commerce.cart.refresh();
 		setCart(newCart);
 	}
-	const CaptureCheckout = async (checkTokenId,newOrder) => {
+	const OnCaptureCheckout = async (checkTokenId,newOrder) => {
 		try{
 			const incomingOrder = await commerce.checkout.capture(checkTokenId,newOrder)
 			setOrder(incomingOrder)
@@ -83,7 +83,7 @@ const App = () => {
 				<Route exact path="/checkout"> 
 					<Checkout cart={cart} 
 					order={order}
-					OnCaptureCheckout={CaptureCheckout}
+					OnCaptureCheckout={OnCaptureCheckout}
 					error={errorMessage}
 					/>
 
