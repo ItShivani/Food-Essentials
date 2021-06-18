@@ -22,7 +22,7 @@ const Checkout = ({cart,order,OnCaptureCheckout,error}) => {
 				setCheckoutToken(token)
 			}
 			catch (error) {
-				history.pushState('/')
+				history.push('/')
 			}
 		}
 		generateToken();
@@ -30,10 +30,10 @@ const Checkout = ({cart,order,OnCaptureCheckout,error}) => {
 
 	const nextStep = () => setActiveStep((previousActiveStep) => previousActiveStep + 1);
 	const backStep = () => setActiveStep((previousActiveStep) => previousActiveStep - 1);
-	const next = (data) => {
+	const test = (data) => {
 		setShippingData(data);
 		nextStep();
-	}
+	};
 
 	const timeout = () => {
 		setTimeout(() => {
@@ -44,7 +44,7 @@ const Checkout = ({cart,order,OnCaptureCheckout,error}) => {
 		<>
 			<div>
 				<Typography variant="h5">
-				Thank you for your purchase {order.customer.firstname} {order.customer.lastname}
+					Thank you for your purchase {order.customer.firstname} {order.customer.lastname}
 				</Typography>
 				<Divider className={classes.divider}/>
 				<Typography variant="subtitle2">
@@ -87,7 +87,7 @@ const Checkout = ({cart,order,OnCaptureCheckout,error}) => {
 				</Typography>
 			</>
 		}
-	const Form = () => activeStep ===0 ? <AddressForm checkoutToken={checkoutToken} next={next}/> 
+	const Form = () => activeStep ===0 ? <AddressForm checkoutToken={checkoutToken} test={test}/> 
 	: <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken} nextStep={nextStep} backStep={backStep} OnCaptureCheckout={OnCaptureCheckout} timeout={timeout}/>
 	return (
 		<>

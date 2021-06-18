@@ -5,14 +5,13 @@ import {loadStripe} from '@stripe/stripe-js'
 import Review from './Review'
 
 const stripePromise=loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
-//const stripePromise = loadStripe(' ... ')
 
 
 const PaymentForm = ({checkoutToken,backStep,OnCaptureCheckout,nextStep,shippingData,timeout}) => {
 	const Submit = async (event,elements,stripe) => {
 		event.preventDefault();
 
-		if(!stripe || !elements)
+/*		if(!stripe || !elements)
 				return ;
 
 		const cardElement = elements.getElements(CardElement);
@@ -21,19 +20,51 @@ const PaymentForm = ({checkoutToken,backStep,OnCaptureCheckout,nextStep,shipping
 			console.log(error)
 		}
 		else {
+*/		//	const manualOptions = checkout.gateways.manual;
+
+			// Each option has an ID, a name, and details.
+			//manualOptions.each((option) => console.log(option.id, option.name, option.details));
 			const orderData = {
-				line_items:checkoutToken.live.line_items,
-				customer: {firstname:shippingData.firstName,lastName:shippingData.lastName,email:shippingData.email},
-				shipping: {block:shippingData.block,flatno:shippingData.flatnumber,city:shippingData.city,country:shippingData.country,zip:shippingData.zip},
-				payment: { gateway:'stripe',stripe: {
-					payment_method_id: paymentMethod.id
-				}}
-			}
+				line_items: checkoutToken.live.line_items,
+			  customer: {
+			    firstname: shippingData.firstName,
+			    lastname: shippingData.lastName,
+			    email: shippingData.email
+			  },
+			  shipping: {
+			    name: 'Domestic',
+			    street: shippingData.block,
+			    town_city: shippingData.city,
+			    county_state: 'IN-TG',
+			    postal_zip_code: shippingData.zip,
+			    country: 'IN'
+			  },
+			  fulfillment: {
+			    shipping_method: 'ship_7RyWOwmK5nEa2V'
+			  },
+ 			 billing: {
+    			name: 'Domestic',
+			    street: shippingData.block,
+			    town_city: shippingData.city,
+			    county_state: 'IN-TG',
+			    postal_zip_code: shippingData.zip,
+			    country: 'IN'
+				},
+				payment: {
+			      gateway: 'test_gateway',
+			      card: {
+			        number: '4242424242424242',
+			        expiry_month: '02',
+			        expiry_year: '24',
+			        cvc: '123',
+			        postal_zip_code: '94107',
+			      }
+			}}
 			OnCaptureCheckout(checkoutToken.id,orderData);
 			timeout();
 			nextStep();
 
-		}
+		//}
 
 	}
 	return (
@@ -54,7 +85,7 @@ const PaymentForm = ({checkoutToken,backStep,OnCaptureCheckout,nextStep,shipping
 								<Button variant="outlined" onClick={backStep}>
 									Back
 								</Button>
-								<Button type='submit' variant='contained' disabled={!stripe} color="primary">
+								<Button type='submit' variant='contained' disabled={stripe} color="primary">
 									Pay { checkoutToken.live.subtotal.formatted_with_symbol}
 								</Button>
 

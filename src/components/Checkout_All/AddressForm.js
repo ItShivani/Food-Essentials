@@ -5,7 +5,7 @@ import {useForm,FormProvider} from 'react-hook-form'
 import CustomField from './CustomTextField'
 import {commerce} from '../../lib/commerce'
 import {Link} from 'react-router-dom'
-const AddressForm = ({checkoutToken , next }) => {
+const AddressForm = ({checkoutToken , test }) => {
 	const methods = useForm();
 	const shippingCountry='India'
 
@@ -15,7 +15,7 @@ const AddressForm = ({checkoutToken , next }) => {
 				Shipping Address
 			</Typography>
 			<FormProvider {...methods}>
-				<form onSubmit={methods.handleSubmit((data) => next({...data,shippingCountry}))}>
+				<form onSubmit={methods.handleSubmit((data) => test({...data}))}>
 					<Grid container spacing={3}>
 					
 						<CustomField required name='firstName' label='First Name'/> 

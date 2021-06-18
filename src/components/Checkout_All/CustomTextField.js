@@ -6,21 +6,16 @@ const CustomField = ({name,label,required}) => {
   const { control } = useFormContext();
   const isError = false;
 
-	return (
-   		<>
+  return (
+      <>
          <Controller
-            control={control}
-            defaultValue =""
-            name={name}
-            render = {({ field})=> (
-            <TextField
-      		  fullWidth
-             label={label}
-             required
-             />
-            )}
-         />
-   		</>
+        render={({ field }) => <TextField {...field} label={label} required />}
+        control={control}
+        fullWidth
+        name={name}
+      />
+
+        </>
  );
  }
 
