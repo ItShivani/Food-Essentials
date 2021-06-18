@@ -1,6 +1,6 @@
 <h2>Food Essentials is an online grocery shopping website.</h2>
 The website is built using commercejs.<br />
-Commerjs is API driven commerce infrastructure.
+Commercejs is API driven commerce infrastructure.
 <br />
 <br />
 
