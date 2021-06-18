@@ -16,13 +16,18 @@ Link to deployed application : https://foodessentials.netlify.app/
 7) Order Confirmation email sent to customer.
 
 **Technologies used:** React, Commercejs, Stripe API <br />
-**Deployed using:** Netlify 
+**Deployed using:** Netlify<br /><br />
+<h3> Homepage </h3>
+<img src="https://github.com/ItShivani/Food-Essentials/blob/master/homepage.PNG" width="700" height="450" /><br /><br/>
+<h3> Cart </h3>
+<img src="https://github.com/ItShivani/Food-Essentials/blob/master/cart.PNG" width="700" height="450" /><br /><br />
+<h3> Checkout </h3>
+<img src="https://github.com/ItShivani/Food-Essentials/blob/master/checkout.PNG" width="700" height="450" /><br /><br />
+<img src="https://github.com/ItShivani/Food-Essentials/blob/master/checkout2.PNG" width="700" height="450" /><br /><br />
+<h3> Order Confirmation </h3>
+<img src="https://github.com/ItShivani/Food-Essentials/blob/master/finalpage.PNG" width="700" height="450" />
 
-![alt text](https://github.com/ItShivani/Food-Essentials/blob/master/homepage.PNG)
-![alt-text](https://github.com/ItShivani/Food-Essentials/blob/master/cart.PNG)
-![alt-text](https://github.com/ItShivani/Food-Essentials/blob/master/checkout.PNG)
-![alt-text](https://github.com/ItShivani/Food-Essentials/blob/master/checkout2.PNG)
-![alt-text](https://github.com/ItShivani/Food-Essentials/blob/master/finalpage.PNG)
+
 
 
 
