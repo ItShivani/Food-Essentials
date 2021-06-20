@@ -13,7 +13,8 @@ Link to deployed application : https://foodessentials.netlify.app/
 4) Empty cart 
 5) Checkout 
 6) Stripe Payment Gateway (Disabled payments for the deployed application, using the test card number) 
-7) Order Confirmation email sent to customer.
+7) Order Confirmation email sent to customer and the seller with all order details.
+8) Mobile responsive design. 
 
 **Technologies used:** React, Commercejs, Stripe API <br />
 **Deployed using:** Netlify<br /><br />
